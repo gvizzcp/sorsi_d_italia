@@ -1,0 +1,405 @@
+{
+    "regioni": [
+      {
+        "nome": "Abruzzo",
+        "vini": [
+          {
+            "nome": "Montepulciano d'Abruzzo",
+            "descrizione": "Vino rosso corposo, simbolo della regione.",
+            "denominazione": "DOC"
+          },
+          {
+            "nome": "Trebbiano d'Abruzzo",
+            "descrizione": "Bianco fresco, secco e floreale.",
+            "denominazione": "DOC"
+          },
+          {
+            "nome": "Cerasuolo d'Abruzzo",
+            "descrizione": "Rosato strutturato, fruttato e persistente.",
+            "denominazione": "DOC"
+          }
+        ]
+      },
+      {
+        "nome": "Basilicata",
+        "vini": [
+          {
+            "nome": "Aglianico del Vulture",
+            "descrizione": "Rosso intenso e tannico, eccellenza lucana.",
+            "denominazione": "DOCG"
+          },
+          {
+            "nome": "Grottino di Roccanova",
+            "descrizione": "Vino rosso da uve miste, elegante e speziato.",
+            "denominazione": "DOC"
+          },
+          {
+            "nome": "Terre dell'Alta Val d'Agri",
+            "descrizione": "Blend rosso aromatico e persistente.",
+            "denominazione": "DOC"
+          }
+        ]
+      },
+      {
+        "nome": "Calabria",
+        "vini": [
+          {
+            "nome": "Cirò Rosso",
+            "descrizione": "Vino rosso robusto e caldo, da uve Gaglioppo.",
+            "denominazione": "DOC"
+          },
+          {
+            "nome": "Greco Bianco",
+            "descrizione": "Bianco profumato, leggero e agrumato.",
+            "denominazione": "DOC"
+          },
+          {
+            "nome": "Lamezia Rosso",
+            "descrizione": "Vino equilibrato da uve locali.",
+            "denominazione": "DOC"
+          }
+        ]
+      },
+      {
+        "nome": "Campania",
+        "vini": [
+          {
+            "nome": "Taurasi",
+            "descrizione": "Vino rosso potente da uve Aglianico.",
+            "denominazione": "DOCG"
+          },
+          {
+            "nome": "Fiano di Avellino",
+            "descrizione": "Bianco elegante, floreale e minerale.",
+            "denominazione": "DOCG"
+          },
+          {
+            "nome": "Greco di Tufo",
+            "descrizione": "Bianco fresco, con sentori di agrumi e mandorla.",
+            "denominazione": "DOCG"
+          }
+        ]
+      },
+      {
+        "nome": "Emilia-Romagna",
+        "vini": [
+          {
+            "nome": "Lambrusco",
+            "descrizione": "Frizzante rosso, secco o dolce, fresco e beverino.",
+            "denominazione": "DOC"
+          },
+          {
+            "nome": "Sangiovese di Romagna",
+            "descrizione": "Rosso morbido, versatile e fruttato.",
+            "denominazione": "DOC"
+          },
+          {
+            "nome": "Albana di Romagna",
+            "descrizione": "Bianco secco o passito, strutturato.",
+            "denominazione": "DOCG"
+          }
+        ]
+      },
+      {
+        "nome": "Friuli-Venezia Giulia",
+        "vini": [
+          {
+            "nome": "Friulano",
+            "descrizione": "Bianco fresco, con note di mandorla e fiori bianchi.",
+            "denominazione": "DOC"
+          },
+          {
+            "nome": "Refosco dal Peduncolo Rosso",
+            "descrizione": "Rosso tannico con retrogusto amarognolo.",
+            "denominazione": "DOC"
+          },
+          {
+            "nome": "Pignolo",
+            "descrizione": "Rosso raro, corposo e intenso.",
+            "denominazione": "DOC"
+          }
+        ]
+      },
+      {
+        "nome": "Lazio",
+        "vini": [
+          {
+            "nome": "Frascati Superiore",
+            "descrizione": "Bianco secco, fresco e minerale.",
+            "denominazione": "DOCG"
+          },
+          {
+            "nome": "Cesanese del Piglio",
+            "descrizione": "Rosso elegante, fruttato e speziato.",
+            "denominazione": "DOCG"
+          },
+          {
+            "nome": "Est! Est!! Est!!! di Montefiascone",
+            "descrizione": "Bianco leggero e fruttato, perfetto da aperitivo.",
+            "denominazione": "DOC"
+          }
+        ]
+      },
+      {
+        "nome": "Liguria",
+        "vini": [
+          {
+            "nome": "Pigato",
+            "descrizione": "Bianco profumato con sentori di erbe e frutta.",
+            "denominazione": "DOC"
+          },
+          {
+            "nome": "Vermentino",
+            "descrizione": "Bianco fresco, secco e sapido, ideale col pesce.",
+            "denominazione": "DOC"
+          },
+          {
+            "nome": "Rossese di Dolceacqua",
+            "descrizione": "Rosso delicato, speziato e fruttato.",
+            "denominazione": "DOC"
+          }
+        ]
+      },
+      {
+        "nome": "Lombardia",
+        "vini": [
+          {
+            "nome": "Franciacorta",
+            "descrizione": "Spumante metodo classico, elegante e complesso.",
+            "denominazione": "DOCG"
+          },
+          {
+            "nome": "Valtellina Superiore",
+            "descrizione": "Rosso da Nebbiolo, armonico e persistente.",
+            "denominazione": "DOCG"
+          },
+          {
+            "nome": "Bonarda dell'Oltrepò Pavese",
+            "descrizione": "Rosso vivace, fruttato, perfetto per salumi.",
+            "denominazione": "DOC"
+          }
+        ]
+      },
+      {
+        "nome": "Marche",
+        "vini": [
+          {
+            "nome": "Verdicchio dei Castelli di Jesi",
+            "descrizione": "Bianco secco, con ottima acidità e freschezza.",
+            "denominazione": "DOC"
+          },
+          {
+            "nome": "Rosso Conero",
+            "descrizione": "Rosso corposo e speziato, da Montepulciano.",
+            "denominazione": "DOC"
+          },
+          {
+            "nome": "Lacrima di Morro d'Alba",
+            "descrizione": "Rosso aromatico, con note floreali intense.",
+            "denominazione": "DOC"
+          }
+        ]
+      },
+      {
+        "nome": "Molise",
+        "vini": [
+          {
+            "nome": "Tintilia del Molise",
+            "descrizione": "Rosso autoctono, potente e speziato.",
+            "denominazione": "DOC"
+          },
+          {
+            "nome": "Biferno Rosso",
+            "descrizione": "Blend robusto di Montepulciano e Aglianico.",
+            "denominazione": "DOC"
+          },
+          {
+            "nome": "Pentro di Isernia",
+            "descrizione": "Rosso elegante e caratteristico.",
+            "denominazione": "DOC"
+          }
+        ]
+      },
+      {
+        "nome": "Piemonte",
+        "vini": [
+          {
+            "nome": "Barolo",
+            "descrizione": "Rosso complesso e longevo da uve Nebbiolo.",
+            "denominazione": "DOCG"
+          },
+          {
+            "nome": "Barbaresco",
+            "descrizione": "Rosso elegante e raffinato, parente del Barolo.",
+            "denominazione": "DOCG"
+          },
+          {
+            "nome": "Moscato d’Asti",
+            "descrizione": "Spumante dolce, aromatico e leggero.",
+            "denominazione": "DOCG"
+          }
+        ]
+      },
+      {
+        "nome": "Puglia",
+        "vini": [
+          {
+            "nome": "Primitivo di Manduria",
+            "descrizione": "Rosso intenso, alcolico e vellutato.",
+            "denominazione": "DOC"
+          },
+          {
+            "nome": "Negroamaro",
+            "descrizione": "Rosso deciso, con note di frutti rossi e spezie.",
+            "denominazione": "IGT"
+          },
+          {
+            "nome": "Salice Salentino",
+            "descrizione": "Vino corposo, equilibrato e tipicamente pugliese.",
+            "denominazione": "DOC"
+          }
+        ]
+      },
+      {
+        "nome": "Sardegna",
+        "vini": [
+          {
+            "nome": "Cannonau di Sardegna",
+            "descrizione": "Rosso potente, simbolo dell'isola.",
+            "denominazione": "DOC"
+          },
+          {
+            "nome": "Vermentino di Gallura",
+            "descrizione": "Bianco secco e sapido, perfetto con il pesce.",
+            "denominazione": "DOCG"
+          },
+          {
+            "nome": "Carignano del Sulcis",
+            "descrizione": "Rosso morbido, fruttato e speziato.",
+            "denominazione": "DOC"
+          }
+        ]
+      },
+      {
+        "nome": "Sicilia",
+        "vini": [
+          {
+            "nome": "Nero d'Avola",
+            "descrizione": "Rosso corposo e speziato, simbolo della Sicilia.",
+            "denominazione": "IGT"
+          },
+          {
+            "nome": "Cerasuolo di Vittoria",
+            "descrizione": "Rosso fruttato e morbido, unico DOCG dell'isola.",
+            "denominazione": "DOCG"
+          },
+          {
+            "nome": "Marsala",
+            "descrizione": "Vino liquoroso ambrato, con note di caramello.",
+            "denominazione": "DOC"
+          }
+        ]
+      },
+      {
+        "nome": "Toscana",
+        "vini": [
+          {
+            "nome": "Chianti Classico",
+            "descrizione": "Rosso secco con note di ciliegia e spezie.",
+            "denominazione": "DOCG"
+          },
+          {
+            "nome": "Brunello di Montalcino",
+            "descrizione": "Rosso elegante e adatto all'invecchiamento.",
+            "denominazione": "DOCG"
+          },
+          {
+            "nome": "Vernaccia di San Gimignano",
+            "descrizione": "Bianco fresco e minerale.",
+            "denominazione": "DOCG"
+          }
+        ]
+      },
+      {
+        "nome": "Trentino-Alto Adige",
+        "vini": [
+          {
+            "nome": "Lagrein",
+            "descrizione": "Rosso corposo, speziato e di montagna.",
+            "denominazione": "DOC"
+          },
+          {
+            "nome": "Gewürztraminer",
+            "descrizione": "Bianco aromatico, intenso e floreale.",
+            "denominazione": "DOC"
+          },
+          {
+            "nome": "Teroldego Rotaliano",
+            "descrizione": "Rosso fresco con tannini equilibrati.",
+            "denominazione": "DOC"
+          }
+        ]
+      },
+      {
+        "nome": "Umbria",
+        "vini": [
+          {
+            "nome": "Sagrantino di Montefalco",
+            "descrizione": "Rosso tannico e potente, vino simbolo dell'Umbria.",
+            "denominazione": "DOCG"
+          },
+          {
+            "nome": "Montefalco Rosso",
+            "descrizione": "Blend elegante con Sangiovese e Sagrantino.",
+            "denominazione": "DOC"
+          },
+          {
+            "nome": "Orvieto Classico",
+            "descrizione": "Bianco secco, minerale e molto versatile.",
+            "denominazione": "DOC"
+          }
+        ]
+      },
+      {
+        "nome": "Valle d'Aosta",
+        "vini": [
+          {
+            "nome": "Petit Rouge",
+            "descrizione": "Rosso autoctono, delicato e speziato.",
+            "denominazione": "DOC"
+          },
+          {
+            "nome": "Fumin",
+            "descrizione": "Rosso strutturato e aromatico.",
+            "denominazione": "DOC"
+          },
+          {
+            "nome": "Blanc de Morgex et de La Salle",
+            "descrizione": "Bianco d’alta quota, minerale e fresco.",
+            "denominazione": "DOC"
+          }
+        ]
+      },
+      {
+        "nome": "Veneto",
+        "vini": [
+          {
+            "nome": "Amarone della Valpolicella",
+            "descrizione": "Rosso robusto, ottenuto da uve appassite.",
+            "denominazione": "DOCG"
+          },
+          {
+            "nome": "Soave Classico",
+            "descrizione": "Bianco secco e floreale, perfetto con il pesce.",
+            "denominazione": "DOC"
+          },
+          {
+            "nome": "Prosecco di Valdobbiadene",
+            "descrizione": "Spumante leggero e fruttato.",
+            "denominazione": "DOCG"
+          }
+        ]
+      }
+    ]
+  }
+  
