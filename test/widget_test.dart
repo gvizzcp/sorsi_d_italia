@@ -1,32 +1,68 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
-import 'package:sorsi_d_italia/main.dart';
+import 'package:sorsi_d_italia/models/regione.dart';
+import 'package:sorsi_d_italia/models/vino.dart';
+import 'package:sorsi_d_italia/screens/regione_page.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (
+  testWidgets('Tap su una regione apre RegionePage', (
     WidgetTester tester,
   ) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const SorsiApp());
+    final regione = Regione(
+      nome: 'Sicilia',
+      vini: [
+        Vino(
+          nome: 'Nero d’Avola',
+          descrizione:
+              'Vino rosso corposo tipico della Sicilia.',
+          denominazione: 'DOC',
+        ),
+        Vino(
+          nome: 'Cerasuolo di Vittoria',
+          descrizione:
+              'Unico vino DOCG siciliano, elegante e fruttato.',
+          denominazione: 'DOCG',
+        ),
+        Vino(
+          nome: 'Marsala',
+          descrizione:
+              'Vino liquoroso ambrato, con note di caramello.',
+          denominazione: 'DOC',
+        ),
+      ],
+    );
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Scaffold(
+          body: ListView(
+            children: [
+              ListTile(
+                title: Text(regione.nome),
+                onTap: () {
+                  Navigator.push(
+                    tester.element(find.text(regione.nome)),
+                    MaterialPageRoute(
+                      builder: (_) =>
+                          RegionePage(regione: regione),
+                    ),
+                  );
+                },
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+    expect(find.text('Sicilia'), findsOneWidget);
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    await tester.tap(find.text('Sicilia'));
+    await tester.pumpAndSettle();
+
+    expect(
+      find.textContaining('I nostri migliori 3 vini'),
+      findsOneWidget,
+    );
   });
 }
