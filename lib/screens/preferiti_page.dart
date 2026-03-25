@@ -1,41 +1,14 @@
 import 'package:flutter/material.dart';
-import '../models/locale.dart';
-import '../service/preferiti_service.dart';
+import 'package:provider/provider.dart';
+import '../providers/preferiti_provider.dart';
 
-class PreferitiPage extends StatefulWidget {
+class PreferitiPage extends StatelessWidget {
   const PreferitiPage({super.key});
 
   @override
-  State<PreferitiPage> createState() =>
-      _PreferitiPageState();
-}
-
-class _PreferitiPageState extends State<PreferitiPage> {
-  final _service = PreferitiService();
-  List<LocaleVino> _preferiti = [];
-
-  @override
-  void initState() {
-    super.initState();
-    _carica();
-  }
-
-  Future<void> _carica() async {
-    final dati = await _service.caricaPreferiti();
-    setState(() {
-      _preferiti = dati;
-    });
-  }
-
-  Future<void> _rimuovi(LocaleVino locale) async {
-    setState(() {
-      _preferiti.removeWhere((l) => l.nome == locale.nome);
-    });
-    await _service.salvaPreferiti(_preferiti);
-  }
-
-  @override
   Widget build(BuildContext context) {
+    final preferiti = context.watch<PreferitiProvider>().preferiti;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text("Preferiti"),
@@ -43,14 +16,14 @@ class _PreferitiPageState extends State<PreferitiPage> {
         foregroundColor: Colors.white,
         centerTitle: true,
       ),
-      body: _preferiti.isEmpty
+      body: preferiti.isEmpty
           ? const Center(
               child: Text("Nessun locale preferito."),
             )
           : ListView.builder(
-              itemCount: _preferiti.length,
+              itemCount: preferiti.length,
               itemBuilder: (context, index) {
-                final locale = _preferiti[index];
+                final locale = preferiti[index];
                 return ListTile(
                   leading: const Icon(
                     Icons.favorite,
@@ -60,7 +33,9 @@ class _PreferitiPageState extends State<PreferitiPage> {
                   subtitle: Text(locale.indirizzo),
                   trailing: IconButton(
                     icon: const Icon(Icons.delete),
-                    onPressed: () => _rimuovi(locale),
+                    onPressed: () => context
+                        .read<PreferitiProvider>()
+                        .rimuovi(locale),
                   ),
                 );
               },

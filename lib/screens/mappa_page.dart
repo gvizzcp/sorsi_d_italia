@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:provider/provider.dart';
 
 import '../service/location_service.dart';
 import '../service/foursquare_service.dart';
-import '../service/preferiti_service.dart';
 import '../models/locale.dart';
+import '../providers/preferiti_provider.dart';
 
 class MappaPage extends StatefulWidget {
   const MappaPage({super.key});
@@ -20,8 +21,6 @@ class _MappaPageState extends State<MappaPage> {
   List<LocaleVino> _locali = [];
   bool _caricamento = false;
   String? _errore;
-  final _servicePref = PreferitiService();
-  List<LocaleVino> _preferiti = [];
 
   @override
   void initState() {
@@ -47,12 +46,6 @@ class _MappaPageState extends State<MappaPage> {
         _locali = locali;
         _caricamento = false;
       });
-      setState(() {
-        _posizioneUtente = posizione;
-        _locali = locali;
-        _caricamento = false;
-      });
-      _preferiti = await _servicePref.caricaPreferiti();
     } catch (e) {
       setState(() {
         _errore = e.toString();
@@ -125,6 +118,7 @@ class _MappaPageState extends State<MappaPage> {
 
   // Funzione: Lista ordinata per distanza
   Widget _buildLista() {
+    final preferiti = context.watch<PreferitiProvider>();
     final localiOrdinati = [..._locali];
     localiOrdinati.sort(
       (a, b) => a.distanza.compareTo(b.distanza),
@@ -146,25 +140,13 @@ class _MappaPageState extends State<MappaPage> {
           isThreeLine: true,
           trailing: IconButton(
             icon: Icon(
-              _preferiti.any((p) => p.nome == locale.nome)
+              preferiti.isPreferito(locale)
                   ? Icons.favorite
                   : Icons.favorite_border,
               color: Colors.red,
             ),
-            onPressed: () async {
-              setState(() {
-                if (_preferiti.any(
-                  (p) => p.nome == locale.nome,
-                )) {
-                  _preferiti.removeWhere(
-                    (p) => p.nome == locale.nome,
-                  );
-                } else {
-                  _preferiti.add(locale);
-                }
-              });
-              await _servicePref.salvaPreferiti(_preferiti);
-            },
+            onPressed: () =>
+                context.read<PreferitiProvider>().toggle(locale),
           ),
           onTap: () => _mostraDettagliLocale(locale),
         );

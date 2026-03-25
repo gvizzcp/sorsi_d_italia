@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(wc -l \"c:\\\\UNIVERSITA\\\\SorsiDItalia\\\\sorsi_d_italia\\\\lib\\\\service\"/*.dart)",
+      "Bash(wc -l \"c:\\\\UNIVERSITA\\\\SorsiDItalia\\\\sorsi_d_italia\\\\lib\\\\screens\"/*.dart)",
+      "Bash(flutter pub:*)",
+      "Bash(flutter analyze:*)"
+    ]
+  }
+}

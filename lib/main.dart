@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'screens/navigation_container.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'providers/preferiti_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load();
-  runApp(const SorsiApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (_) => PreferitiProvider()..carica(),
+      child: const SorsiApp(),
+    ),
+  );
 }
 
 class SorsiApp extends StatelessWidget {
