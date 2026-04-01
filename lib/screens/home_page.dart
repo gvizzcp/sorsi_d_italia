@@ -13,7 +13,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   List<Regione> _regioni = [];
   bool _caricamento = true;
-  bool _errore = false;
+  String? _errore;
 
   @override
   void initState() {
@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
       });
     } catch (e) {
       setState(() {
-        _errore = true;
+        _errore = e.toString();
         _caricamento = false;
       });
     }
@@ -38,31 +38,26 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    if (_caricamento) {
-      return const Scaffold(
-        body: Center(child: CircularProgressIndicator()),
-      );
-    }
-
-    if (_errore) {
-      return const Scaffold(
-        body: Center(
-          child: Text("Errore nel caricamento dei dati."),
-        ),
-      );
-    }
-
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xFF7B1E3A),
         foregroundColor: Colors.white,
         title: const Text(
-          "Sorsi d’Italia",
+          "Sorsi d'Italia",
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
       ),
-      body: ListView.builder(
+      body: _caricamento
+          ? const Center(child: CircularProgressIndicator())
+          : _errore != null
+              ? Center(child: Text(_errore!))
+              : _buildLista(),
+    );
+  }
+
+  Widget _buildLista() {
+    return ListView.builder(
         itemCount: _regioni.length,
         itemBuilder: (context, index) {
           final regione = _regioni[index];
@@ -106,7 +101,6 @@ class _HomePageState extends State<HomePage> {
             ),
           );
         },
-      ),
-    );
+      );
   }
 }
