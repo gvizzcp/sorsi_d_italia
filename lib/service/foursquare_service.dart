@@ -8,21 +8,25 @@ Future<List<LocaleVino>> cercaEnoteche({
   required double lon,
 }) async {
   final apiKey = dotenv.env['FOURSQUARE_API_KEY'] ?? '';
-  const String categoriaEnoteche =
-      '13018,13007'; // Categoria: 1)Wine Shops - 2)Bar(che include wine bar, ma anche bar normali)
+  const String categorieEnoteche =
+      '4bf58dd8d48988d123941735,' // Wine Bar
+      '4bf58dd8d48988d119951735,' // Wine Store (enoteche)
+      '4bf58dd8d48988d14b941735'; // Winery (cantine)
 
-  final url = Uri.parse(
-    'https://api.foursquare.com/v3/places/search'
-    '?ll=$lat,$lon'
-    '&radius=50000'
-    '&categories=$categoriaEnoteche'
-    '&limit=20',
-  );
+  final url = Uri.https('places-api.foursquare.com', '/places/search', {
+    'll': '$lat,$lon',
+    'radius': '50000',
+    'fsq_category_ids': categorieEnoteche,
+    'limit': '20',
+    'sort': 'DISTANCE',
+    'fields': 'fsq_place_id,name,latitude,longitude,distance,location',
+  });
 
   final response = await http.get(
     url,
     headers: {
-      'Authorization': apiKey,
+      'Authorization': 'Bearer $apiKey',
+      'X-Places-Api-Version': '2025-06-17',
       'accept': 'application/json',
     },
   );
@@ -31,12 +35,8 @@ Future<List<LocaleVino>> cercaEnoteche({
     final data = json.decode(response.body);
     final results = data['results'] as List;
 
-    return results
-        .map((e) => LocaleVino.fromJson(e))
-        .toList();
+    return results.map((e) => LocaleVino.fromJson(e)).toList();
   } else {
-    throw Exception(
-      'Errore API Foursquare: ${response.statusCode}',
-    );
+    throw Exception('Errore API Foursquare: ${response.statusCode}');
   }
 }

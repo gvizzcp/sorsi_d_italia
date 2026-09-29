@@ -9,7 +9,7 @@ class PreferitiProvider extends ChangeNotifier {
   List<LocaleVino> get preferiti => _preferiti;
 
   bool isPreferito(LocaleVino locale) =>
-      _preferiti.any((p) => p.nome == locale.nome);
+      _preferiti.any((p) => p.id == locale.id);
 
   Future<void> carica() async {
     _preferiti = await _service.caricaPreferiti();
@@ -18,7 +18,7 @@ class PreferitiProvider extends ChangeNotifier {
 
   Future<void> toggle(LocaleVino locale) async {
     if (isPreferito(locale)) {
-      _preferiti.removeWhere((p) => p.nome == locale.nome);
+      _preferiti.removeWhere((p) => p.id == locale.id);
     } else {
       _preferiti.add(locale);
     }
@@ -27,7 +27,7 @@ class PreferitiProvider extends ChangeNotifier {
   }
 
   Future<void> rimuovi(LocaleVino locale) async {
-    _preferiti.removeWhere((p) => p.nome == locale.nome);
+    _preferiti.removeWhere((p) => p.id == locale.id);
     await _service.salvaPreferiti(_preferiti);
     notifyListeners();
   }
