@@ -26,7 +26,7 @@ App mobile in Flutter per scoprire i vini tipici delle regioni italiane e trovar
 ### 2. Scarica il progetto
 
 ```bash
-git clone <https://github.com/gvizzcp/sorsi_d_italia.git>
+git clone https://github.com/gvizzcp/sorsi_d_italia.git
 cd sorsi_d_italia
 flutter pub get
 ```
